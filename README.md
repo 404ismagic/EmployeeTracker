@@ -10,3 +10,6 @@ People can use this to create a work and work salery and job increase and store 
 
 using this app you can manage medium sized companys, you can add your own deparments, you can create seeds in shema as a refelctive database
 you can add employes and roles, you can add new data for complex equations 
+
+https://youtu.be/PcZBY3kPdYs
+LINK TO VIDEO 
