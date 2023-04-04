@@ -1,7 +1,10 @@
+// Import nessary compotents and packages
+
 const inquirer = require('inquirer');
 const mysql = require('mysql2');
 const cTable = require('console.table'); 
 
+// Make a connction to db and store in dbConn variable
 const dbConn = mysql.createConnection({
     host: "localhost",
     user: "root",
@@ -11,7 +14,8 @@ const dbConn = mysql.createConnection({
 
 
 
-
+// Function mainMenu allows user to specify what they can achieve with
+// employeeTracker app at the top level.
 function mainMenu() {
     inquirer
         .prompt([
@@ -88,7 +92,7 @@ function mainMenu() {
     
                     ])
                     .then((answers) => {
-                        dbConn.query(`INSERT INTO roles (job_title, department_id, salary) VALUES ("${answers.new_role}", "${answers.department_id}", "${answers.salary}")`, (err, res) => {
+                        dbConn.query(`INSERT INTO roles (title, department_id, salary) VALUES ("${answers.new_role}", "${answers.department_id}", "${answers.salary}")`, (err, res) => {
                             err ? console.error(err) : console.table(res)
                             mainMenu()
                         })
